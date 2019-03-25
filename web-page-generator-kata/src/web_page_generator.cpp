@@ -1,16 +1,18 @@
-#include <iostream>
-#include <fstream>
+#include "User.h"
+#include "UserStaticWebPageGenerator.h"
 
 using namespace std;
 
 int main( int, char* [] )
 {
-    char filename[ ] = "./html/users.html";
-    fstream appendFileToWorkWith;
+    User user1 ("Luis", "Coach en Codium");
+    User user2 ("Luis", "Coach en Codium");
+    User user3 ("Luis", "Coach en Codium");
 
-    appendFileToWorkWith.open(filename, std::fstream::out);
+    User users[3] = {user1, user2, user3};
 
-    appendFileToWorkWith << "<html></html>";
-    appendFileToWorkWith.close();
+    UserStaticWebPageGenerator generator;
+    generator.generateFile(users);
+
     return 0;
 }
