@@ -1,5 +1,5 @@
 run.tests.output : build
-	./run.tests
+	./bin/tests
 
-build : *.cpp *.cc
-	g++ -Wall -Werror -O *.cpp -o run.tests
+build : tests/*.cpp src/*.cc
+	g++ -Wall -Werror -O tests/*.cpp -o bin/tests
