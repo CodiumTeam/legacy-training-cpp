@@ -17,4 +17,4 @@ int main( int, char* [] )
     generator.generateFile(users);
 
     return 0;
-}”
+}
