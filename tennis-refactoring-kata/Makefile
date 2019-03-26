@@ -1,5 +1,10 @@
-run.tests.output : build
+default: build tests
+
+build:
+	@g++ -Wall -Werror -O tests/*.cpp -o bin/tests
+
+.PHONY: tests
+tests:
 	@./bin/tests
 
-build : tests/*.cpp src/*.cc
-	@g++ -Wall -Werror -O tests/*.cpp -o bin/tests
+

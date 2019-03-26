@@ -33,5 +33,10 @@ You can read more about Tennis scores [here](http://en.wikipedia.org/wiki/Tennis
 
 You need only report the score for the current game. Sets and Matches are out of scope.
 
+# Usage
+To compile the code and execute the tests please, run 
+
+    make
+
 # Credits
 Thanks to [Emily Bache](https://github.com/emilybache) for crafting this kata.
