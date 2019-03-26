@@ -47,7 +47,8 @@ void UserStaticWebPageGenerator::generateFile(std::list<User> users) {
 
     appendFileToWorkWith << "<main role=\"main\" class=\"inner cover\">" << endl;
     for (it = users.begin(); it != users.end(); it++) {
-        appendFileToWorkWith << it->name << endl;
+        appendFileToWorkWith << "<h1 class=\"cover-heading\">" << it->name << "</h1>" << endl;
+        appendFileToWorkWith << "<p class=\"lead\">" << it->biography << "</p>" << endl;
     }
     appendFileToWorkWith << "</main>" << endl;
 
