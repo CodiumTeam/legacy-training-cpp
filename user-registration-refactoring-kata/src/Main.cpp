@@ -1,11 +1,10 @@
 #include <iostream>
 
-#include "UserRegistrationController.h"
+#include "framework/UserRegistrationController.h"
 
 using namespace std;
 
-int main( int, char* [] )
-{
+int main(int, char *[]) {
     cout << "Application starts:" << endl;
 
     UserRegistrationController frameworkController;
