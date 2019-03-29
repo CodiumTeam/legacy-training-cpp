@@ -21,6 +21,15 @@ HttpFrameworkResponse UserRegistrationController::registerUser(HttpFrameworkRequ
         return response;
     }
 
+    try {
+        User userAlreadyRegistered = persistence.findByEmail(request.getParameter("email"));
+        HttpFrameworkResponse response("The email is already in use", 400);
+        return response;
+    }
+    catch (...) {
+        // Continue if the email was not found
+    }
+
     srand (time(NULL));
     int userId = rand() % 1000 + 1;
     User user(userId, request.getParameter("name"), request.getParameter("email"), request.getParameter("password"));
@@ -31,7 +40,6 @@ HttpFrameworkResponse UserRegistrationController::registerUser(HttpFrameworkRequ
     cout << "- email: " << user.getEmail() << endl;
     cout << "- password: " << user.getPassword() << endl;
 
-    FrameworkPersistence persistence;
     persistence.saveUser(user);
 
     stringstream responseMsg;

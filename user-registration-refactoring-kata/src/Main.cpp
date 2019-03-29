@@ -1,5 +1,6 @@
 #include <iostream>
 
+#include "framework/FrameworkPersistence.h"
 #include "framework/HttpFrameworkResponse.h"
 #include "framework/HttpFrameworkRequest.h"
 #include "framework/UserRegistrationController.h"

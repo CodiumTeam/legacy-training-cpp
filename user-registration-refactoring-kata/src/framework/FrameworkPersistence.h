@@ -17,6 +17,8 @@ public:
     FrameworkPersistence();
 
     void saveUser(User user);
+
+    User findByEmail(string email);
 };
 
 #endif
