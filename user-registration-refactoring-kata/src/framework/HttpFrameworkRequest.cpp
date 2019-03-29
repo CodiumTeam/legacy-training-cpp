@@ -2,7 +2,6 @@
 
 
 HttpFrameworkRequest::HttpFrameworkRequest() {
-    parameters["password"] = "aValidPassword";
 }
 
 string HttpFrameworkRequest::getParameter(string name) {

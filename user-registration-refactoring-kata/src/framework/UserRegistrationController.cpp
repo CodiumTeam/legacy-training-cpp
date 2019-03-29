@@ -1,6 +1,7 @@
 #include <iostream>
 #include <sstream>
 
+#include "FrameworkPersistence.h"
 #include "HttpFrameworkRequest.h"
 #include "HttpFrameworkResponse.h"
 #include "UserRegistrationController.h"
@@ -29,6 +30,9 @@ HttpFrameworkResponse UserRegistrationController::registerUser(HttpFrameworkRequ
     cout << "- name: " << user.getName() << endl;
     cout << "- email: " << user.getEmail() << endl;
     cout << "- password: " << user.getPassword() << endl;
+
+    FrameworkPersistence persistence;
+    persistence.saveUser(user);
 
     stringstream responseMsg;
     responseMsg << "new User id is " << user.getId();
