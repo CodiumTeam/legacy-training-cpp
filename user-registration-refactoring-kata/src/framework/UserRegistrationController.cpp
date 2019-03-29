@@ -15,6 +15,10 @@ UserRegistrationController::UserRegistrationController() {
 HttpFrameworkResponse UserRegistrationController::registerUser(HttpFrameworkRequest request) {
     cout << "UserRegistrationController:" << endl;
 
+    if (request.getParameter("password").length() <= 8 || request.getParameter("password").find("_") == string::npos) {
+        HttpFrameworkResponse response("The password is not valid", 400);
+        return response;
+    }
 
     srand (time(NULL));
     int userId = rand() % 1000 + 1;

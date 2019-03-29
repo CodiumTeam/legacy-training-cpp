@@ -12,7 +12,7 @@ int main(int, char *[]) {
     HttpFrameworkRequest httpFrameworkRequest;
     httpFrameworkRequest.setParameter("name", "Mario Bros");
     httpFrameworkRequest.setParameter("email", "mario@bros.com");
-    httpFrameworkRequest.setParameter("password", "aValidPassword");
+    httpFrameworkRequest.setParameter("password", "aValidPa_");
 
     UserRegistrationController frameworkController;
     HttpFrameworkResponse httpFrameworkResponse = frameworkController.registerUser(httpFrameworkRequest);
