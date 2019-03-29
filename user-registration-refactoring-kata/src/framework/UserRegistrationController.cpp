@@ -13,7 +13,9 @@ UserRegistrationController::UserRegistrationController() {
 void UserRegistrationController::registerUser(HttpFrameworkRequest request) {
     cout << "UserRegistrationController:" << endl;
 
-    User user(1234, request.getParameter("name"), request.getParameter("email"), request.getParameter("password"));
+    srand (time(NULL));
+    int userId = rand() % 1000 + 1;
+    User user(userId, request.getParameter("name"), request.getParameter("email"), request.getParameter("password"));
 
     cout << "registered user is: " << endl;
     cout << "- id: " << user.getId() << endl;
