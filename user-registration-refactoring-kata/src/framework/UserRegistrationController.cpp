@@ -1,6 +1,8 @@
 #include <iostream>
+#include <sstream>
 
 #include "HttpFrameworkRequest.h"
+#include "HttpFrameworkResponse.h"
 #include "UserRegistrationController.h"
 #include "../domain/User.h"
 
@@ -10,8 +12,9 @@ UserRegistrationController::UserRegistrationController() {
 
 }
 
-void UserRegistrationController::registerUser(HttpFrameworkRequest request) {
+HttpFrameworkResponse UserRegistrationController::registerUser(HttpFrameworkRequest request) {
     cout << "UserRegistrationController:" << endl;
+
 
     srand (time(NULL));
     int userId = rand() % 1000 + 1;
@@ -22,5 +25,10 @@ void UserRegistrationController::registerUser(HttpFrameworkRequest request) {
     cout << "- name: " << user.getName() << endl;
     cout << "- email: " << user.getEmail() << endl;
     cout << "- password: " << user.getPassword() << endl;
-    return;
+
+    stringstream responseMsg;
+    responseMsg << "new User id is " << user.getId();
+    HttpFrameworkResponse response(responseMsg.str(), 200);
+
+    return response;
 }

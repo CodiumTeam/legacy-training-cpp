@@ -1,5 +1,6 @@
 #include <iostream>
 
+#include "framework/HttpFrameworkResponse.h"
 #include "framework/HttpFrameworkRequest.h"
 #include "framework/UserRegistrationController.h"
 
@@ -14,7 +15,10 @@ int main(int, char *[]) {
     httpFrameworkRequest.setParameter("password", "aValidPassword");
 
     UserRegistrationController frameworkController;
-    frameworkController.registerUser(httpFrameworkRequest);
+    HttpFrameworkResponse httpFrameworkResponse = frameworkController.registerUser(httpFrameworkRequest);
+
+    cout << "Framework call response: " << httpFrameworkResponse.getResponse() << endl;
+    cout << "Framework call httpStatus: " << httpFrameworkResponse.getHttpStatus() << endl;
 
     return 0;
 }

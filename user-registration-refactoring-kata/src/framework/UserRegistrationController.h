@@ -5,7 +5,7 @@
 class UserRegistrationController {
 public:
     UserRegistrationController();
-    void registerUser(HttpFrameworkRequest request);
+    HttpFrameworkResponse registerUser(HttpFrameworkRequest request);
 };
 
 #endif
