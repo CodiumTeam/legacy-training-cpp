@@ -1,15 +1,14 @@
-#include <iostream>
-
 #include "HttpFrameworkRequest.h"
-
-using namespace std;
 
 
 HttpFrameworkRequest::HttpFrameworkRequest() {
-
+    parameters["password"] = "aValidPassword";
 }
 
-string HttpFrameworkRequest::getParameter(string v_name) {
-    cout << "HttpFrameworkRequest.getParameter:" << endl;
-    return "static_value";
+string HttpFrameworkRequest::getParameter(string name) {
+    return parameters[name];;
+}
+
+void HttpFrameworkRequest::setParameter(string name, string value) {
+    parameters[name] = value;
 }
