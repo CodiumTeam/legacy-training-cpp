@@ -1,10 +1,15 @@
 #include <iostream>
 
+#include "UserRegistrationController.h"
+
 using namespace std;
 
 int main( int, char* [] )
 {
-    cout << "Hello, World!";
+    cout << "Application starts:" << endl;
+
+    UserRegistrationController frameworkController;
+    frameworkController.registerUser();
 
     return 0;
 }
