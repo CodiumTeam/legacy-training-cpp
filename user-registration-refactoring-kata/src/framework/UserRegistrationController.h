@@ -5,7 +5,7 @@
 class UserRegistrationController {
 public:
     UserRegistrationController();
-    void registerUser();
+    void registerUser(HttpFrameworkRequest request);
 };
 
-#endif //LEGACY_TRAINING_CPP_USERREGISTRATIONCONTROLLER_H
+#endif

@@ -23,4 +23,4 @@ public:
     string getPassword();
 };
 
-#endif //LEGACY_TRAINING_CPP_USER_H
+#endif

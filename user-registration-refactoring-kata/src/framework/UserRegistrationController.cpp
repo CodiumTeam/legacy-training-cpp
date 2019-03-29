@@ -1,5 +1,6 @@
 #include <iostream>
 
+#include "HttpFrameworkRequest.h"
 #include "UserRegistrationController.h"
 #include "../domain/User.h"
 
@@ -9,8 +10,11 @@ UserRegistrationController::UserRegistrationController() {
 
 }
 
-void UserRegistrationController::registerUser() {
+void UserRegistrationController::registerUser(HttpFrameworkRequest request) {
     cout << "UserRegistrationController:" << endl;
+
+    string password = request.getParameter("password");
+    cout << "password: " << password << endl;
 
     User user(1234, "requestName", "requestEmail", "requestPassword");
 
