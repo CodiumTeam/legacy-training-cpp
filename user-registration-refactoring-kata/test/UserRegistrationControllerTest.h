@@ -14,6 +14,9 @@ class UserRegistrationControllerTest : public CppUnit::TestFixture {
 
     CPPUNIT_TEST_SUITE_END();
 
+protected:
+    UserRegistrationController frameworkController;
+
 public:
     void setUp();
 
@@ -24,6 +27,9 @@ public:
     void should_return_the_new_registered_user_id_when_everything_is_valid();
 
     void should_fail_when_password_is_short();
+
+private:
+    HttpFrameworkRequest createValidRequest();
 };
 
 #endif
