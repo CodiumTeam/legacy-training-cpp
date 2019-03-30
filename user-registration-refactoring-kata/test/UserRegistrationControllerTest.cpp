@@ -50,6 +50,17 @@ void UserRegistrationControllerTest::should_fail_when_password_is_short() {
     CPPUNIT_ASSERT_EQUAL(expectedResponse, httpFrameworkResponse.getResponse());
 }
 
+void UserRegistrationControllerTest::should_fail_when_email_is_used() {
+    HttpFrameworkRequest httpFrameworkRequest = createValidRequest();
+    frameworkController.registerUser(httpFrameworkRequest); // this registration should work
+
+    HttpFrameworkResponse httpFrameworkResponse = frameworkController.registerUser(httpFrameworkRequest);
+
+    CPPUNIT_ASSERT_EQUAL(400, httpFrameworkResponse.getHttpStatus());
+    string expectedResponse = "The email is already in use";
+    CPPUNIT_ASSERT_EQUAL(expectedResponse, httpFrameworkResponse.getResponse());
+}
+
 HttpFrameworkRequest UserRegistrationControllerTest::createValidRequest() {
     HttpFrameworkRequest httpFrameworkRequest;
     httpFrameworkRequest.setParameter("name", "aName");

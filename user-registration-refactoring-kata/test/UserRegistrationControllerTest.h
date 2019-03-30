@@ -11,6 +11,7 @@ class UserRegistrationControllerTest : public CppUnit::TestFixture {
     CPPUNIT_TEST( should_success_when_everything_is_valid );
     CPPUNIT_TEST( should_return_the_new_registered_user_id_when_everything_is_valid );
     CPPUNIT_TEST( should_fail_when_password_is_short );
+    CPPUNIT_TEST( should_fail_when_email_is_used );
 
     CPPUNIT_TEST_SUITE_END();
 
@@ -27,6 +28,8 @@ public:
     void should_return_the_new_registered_user_id_when_everything_is_valid();
 
     void should_fail_when_password_is_short();
+
+    void should_fail_when_email_is_used();
 
 private:
     HttpFrameworkRequest createValidRequest();
