@@ -7,7 +7,9 @@
 
 class UserRegistrationControllerTest : public CppUnit::TestFixture {
     CPPUNIT_TEST_SUITE( UserRegistrationControllerTest );
+
     CPPUNIT_TEST( should_success_when_everything_is_valid );
+    CPPUNIT_TEST( should_return_the_new_registered_user_id_when_everything_is_valid );
 
     CPPUNIT_TEST_SUITE_END();
 
@@ -17,6 +19,8 @@ public:
     void tearDown();
 
     void should_success_when_everything_is_valid();
+
+    void should_return_the_new_registered_user_id_when_everything_is_valid();
 };
 
 #endif
