@@ -6,6 +6,7 @@
 #include "HttpFrameworkResponse.h"
 #include "UserRegistrationController.h"
 #include "../domain/User.h"
+#include "../libraries/CUrlEmailSender.h"
 
 using namespace std;
 
@@ -45,6 +46,18 @@ HttpFrameworkResponse UserRegistrationController::registerUser(HttpFrameworkRequ
     stringstream responseMsg;
     responseMsg << "new User id is " << user.getId();
     HttpFrameworkResponse response(responseMsg.str(), 200);
+
+    string to = request.getParameter("email");
+    string from = "info@codium.team";
+    string cc = "";
+    string nameFrom = "Codium";
+    string subject = "The subject of my email";
+    string body = "The content of my email";
+    string smtpServerUrl = "your.smptserver.com";
+    string password = "";
+
+    CUrlEmailSender libraryEmailSender;
+    libraryEmailSender.sendEmail(to, from, cc, nameFrom, subject, body, smtpServerUrl, password);
 
     return response;
 }
