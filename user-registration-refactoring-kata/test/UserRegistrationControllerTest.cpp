@@ -43,3 +43,17 @@ void UserRegistrationControllerTest::should_return_the_new_registered_user_id_wh
     int finalId = stoi(userId);
     CPPUNIT_ASSERT(finalId > 0);
 }
+
+void UserRegistrationControllerTest::should_fail_when_password_is_short() {
+    HttpFrameworkRequest httpFrameworkRequest;
+    httpFrameworkRequest.setParameter("name", "aName");
+    httpFrameworkRequest.setParameter("email", "my_email@my_company.com");
+    httpFrameworkRequest.setParameter("password", "invalid_");
+    UserRegistrationController frameworkController;
+
+    HttpFrameworkResponse httpFrameworkResponse = frameworkController.registerUser(httpFrameworkRequest);
+
+    CPPUNIT_ASSERT_EQUAL(400, httpFrameworkResponse.getHttpStatus());
+    string expectedResponse = "The password is not valid";
+    CPPUNIT_ASSERT_EQUAL(expectedResponse, httpFrameworkResponse.getResponse());
+}
