@@ -8,7 +8,13 @@ using namespace std;
 
 string tennis_score(int points1, int points2){
     Tennis tennis ("player1", "player2");
-    return tennis.score(points1, points2);
+    for (int i= 0; i < points1; i++){
+        tennis.wonPoint("player1");
+    }
+    for (int i= 0; i < points2; i++){
+        tennis.wonPoint("player2");
+    }
+    return tennis.score();
 };
 
 void test_LoveAll_0_0()

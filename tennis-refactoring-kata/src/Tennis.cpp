@@ -8,11 +8,11 @@ Tennis::Tennis(string aPlayer1Name, string aPlayer2Name) {
     score2 = 0;
 }
 
-string Tennis::score(int p1Score, int p2Score) {
+string Tennis::score() {
     std::string score = "";
     int tempScore = 0;
-    if (p1Score == p2Score) {
-        switch (p1Score) {
+    if (score1 == score2) {
+        switch (score1) {
             case 0:
                 score = "Love-All";
                 break;
@@ -27,18 +27,18 @@ string Tennis::score(int p1Score, int p2Score) {
                 break;
 
         }
-    } else if (p1Score >= 4 || p2Score >= 4) {
-        int minusResult = p1Score - p2Score;
+    } else if (score1 >= 4 || score2 >= 4) {
+        int minusResult = score1 - score2;
         if (minusResult == 1) score = "Advantage player1";
         else if (minusResult == -1) score = "Advantage player2";
         else if (minusResult >= 2) score = "Win for player1";
         else score = "Win for player2";
     } else {
         for (int i = 1; i < 3; i++) {
-            if (i == 1) tempScore = p1Score;
+            if (i == 1) tempScore = score1;
             else {
                 score += "-";
-                tempScore = p2Score;
+                tempScore = score2;
             }
             switch (tempScore) {
                 case 0:
@@ -57,5 +57,14 @@ string Tennis::score(int p1Score, int p2Score) {
         }
     }
     return score;
+
+}
+
+void Tennis::wonPoint(string playerName) {
+    if (playerName == "player1"){
+        score1++;
+    } else {
+        score2++;
+    }
 
 }
