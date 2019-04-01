@@ -7,4 +7,5 @@ build:
 tests:
 	@./bin/tests
 
-
+docker-tests:
+	docker run -v $(shell pwd):/opt/project -w /opt/project gcc make
