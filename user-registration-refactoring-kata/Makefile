@@ -17,3 +17,7 @@ docker-run:
 	docker run -v $(shell pwd):/opt/project -w /opt/project cpp-docker-bootstrap make
 docker-tests:
 	docker run -v $(shell pwd):/opt/project -w /opt/project cpp-docker-bootstrap make tests
+win-docker-run:
+	docker run -v %cd%:/opt/project -w /opt/project cpp-docker-bootstrap make
+win-docker-tests:
+	docker run -v %cd%:/opt/project -w /opt/project cpp-docker-bootstrap make tests
