@@ -10,3 +10,10 @@ run:
 tests:
 	g++ -lcppunit -lcurl -std=c++11 -Wall -Werror -O src/domain/*.cpp -O src/framework/*.cpp -O src/libraries/*.cpp test/*.cpp -o bin/run_tests
 	./bin/run_tests
+
+docker-build:
+	docker build -t cpp-docker-bootstrap .
+docker-run:
+	docker run -v $(shell pwd):/opt/project -w /opt/project cpp-docker-bootstrap make
+docker-tests:
+	docker run -v $(shell pwd):/opt/project -w /opt/project cpp-docker-bootstrap make tests
