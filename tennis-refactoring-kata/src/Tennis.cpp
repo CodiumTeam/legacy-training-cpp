@@ -1,8 +1,11 @@
 #include "Tennis.h"
 #include <string>
 
-Tennis::Tennis() {
-
+Tennis::Tennis(string aPlayer1Name, string aPlayer2Name) {
+    player1Name = aPlayer1Name;
+    player2Name = aPlayer2Name;
+    score1 = 0;
+    score2 = 0;
 }
 
 string Tennis::score(int p1Score, int p2Score) {

@@ -7,7 +7,7 @@
 using namespace std;
 
 string tennis_score(int points1, int points2){
-    Tennis tennis;
+    Tennis tennis ("player1", "player2");
     return tennis.score(points1, points2);
 };
 
