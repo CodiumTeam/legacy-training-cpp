@@ -1,9 +1,15 @@
 #include "all_tests.hpp"
 
-/* change this to the version of tennis you want to work on */
-#include "../src/tennis.cc"
-
 #include <cassert>
+#include "../src/Tennis.h"
+
+
+using namespace std;
+
+string tennis_score(int points1, int points2){
+    Tennis tennis;
+    return tennis.score(points1, points2);
+};
 
 void test_LoveAll_0_0()
 {

@@ -1,7 +1,7 @@
 default: build tests
 
 build:
-	@g++ -std=c++11 -Wall -Werror -O tests/*.cpp -o bin/tests
+	@g++ -std=c++11 -Wall -Werror -O src/*.cpp tests/*.cpp -o bin/tests
 
 .PHONY: tests
 tests:
