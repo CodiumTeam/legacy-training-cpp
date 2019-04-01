@@ -14,7 +14,7 @@ string tennis_score(int points1, int points2){
     for (int i= 0; i < points2; i++){
         tennis.wonPoint("player2");
     }
-    return tennis.score();
+    return tennis.getScore();
 };
 
 void test_LoveAll_0_0()

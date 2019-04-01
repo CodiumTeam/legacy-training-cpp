@@ -8,7 +8,16 @@ Tennis::Tennis(string aPlayer1Name, string aPlayer2Name) {
     score2 = 0;
 }
 
-string Tennis::score() {
+void Tennis::wonPoint(string playerName) {
+    if (playerName == "player1"){
+        score1++;
+    } else {
+        score2++;
+    }
+
+}
+
+string Tennis::getScore() {
     std::string score = "";
     int tempScore = 0;
     if (score1 == score2) {
@@ -57,14 +66,5 @@ string Tennis::score() {
         }
     }
     return score;
-
-}
-
-void Tennis::wonPoint(string playerName) {
-    if (playerName == "player1"){
-        score1++;
-    } else {
-        score2++;
-    }
 
 }

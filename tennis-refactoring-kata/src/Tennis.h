@@ -13,7 +13,7 @@ private:
     int score2;
 public:
     Tennis(string aPlayer1Name, string aPlayer2Name);
-    string score();
+    string getScore();
     void wonPoint(string playerName);
 };
 
