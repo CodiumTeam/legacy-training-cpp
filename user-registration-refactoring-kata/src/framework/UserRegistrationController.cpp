@@ -27,7 +27,7 @@ HttpFrameworkResponse UserRegistrationController::registerUser(HttpFrameworkRequ
         HttpFrameworkResponse response("The email is already in use", 400);
         return response;
     }
-    catch (...) {
+    catch (const char* s) {
         // Continue if the email was not found
     }
 
