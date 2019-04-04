@@ -1,16 +1,16 @@
 #include <exception>
 
-#include "FrameworkPersistence.h"
+#include "DatabasePersistence.h"
 #include "DatabaseException.h"
 
-FrameworkPersistence::FrameworkPersistence() {
+DatabasePersistence::DatabasePersistence() {
 }
 
-void FrameworkPersistence::saveUser(User user) {
+void DatabasePersistence::saveUser(User user) {
     users.insert(std::make_pair(user.getEmail(), user));
 }
 
-User FrameworkPersistence::findByEmail(string email) {
+User DatabasePersistence::findByEmail(string email) {
     auto search = users.find(email);
 
     if (search != users.end()) {

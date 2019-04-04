@@ -1,13 +1,13 @@
 #ifndef LEGACY_TRAINING_CPP_USERREGISTRATIONCONTROLLER_H
 #define LEGACY_TRAINING_CPP_USERREGISTRATIONCONTROLLER_H
 
-#include "FrameworkPersistence.h"
+#include "DatabasePersistence.h"
 #include "HttpFrameworkRequest.h"
 #include "HttpFrameworkResponse.h"
 
 class UserRegistrationController {
 private:
-    FrameworkPersistence persistence;
+    DatabasePersistence persistence;
 
 public:
     UserRegistrationController();

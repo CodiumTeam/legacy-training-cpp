@@ -1,5 +1,5 @@
-#ifndef LEGACY_TRAINING_CPP_FRAMEWORKPERSISTENCE_H
-#define LEGACY_TRAINING_CPP_FRAMEWORKPERSISTENCE_H
+#ifndef LEGACY_TRAINING_CPP_DATABASEPERSISTENCE_H
+#define LEGACY_TRAINING_CPP_DATABASEPERSISTENCE_H
 
 #include <string>
 #include <unordered_map>
@@ -9,12 +9,12 @@
 using namespace std;
 
 
-class FrameworkPersistence {
+class DatabasePersistence {
 private:
     unordered_map<string, User> users;
 
 public:
-    FrameworkPersistence();
+    DatabasePersistence();
 
     void saveUser(User user);
 

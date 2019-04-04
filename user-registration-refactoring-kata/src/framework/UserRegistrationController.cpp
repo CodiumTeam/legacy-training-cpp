@@ -2,7 +2,7 @@
 #include <sstream>
 
 #include "DatabaseException.h"
-#include "FrameworkPersistence.h"
+#include "DatabasePersistence.h"
 #include "HttpFrameworkRequest.h"
 #include "HttpFrameworkResponse.h"
 #include "UserRegistrationController.h"

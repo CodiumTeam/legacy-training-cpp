@@ -1,7 +1,7 @@
 #include "string.h"
 
 #include "UserRegistrationControllerTest.h"
-#include "../src/framework/FrameworkPersistence.h"
+#include "../src/framework/DatabasePersistence.h"
 #include "../src/framework/HttpFrameworkResponse.h"
 #include "../src/framework/HttpFrameworkRequest.h"
 #include "../src/framework/UserRegistrationController.h"
