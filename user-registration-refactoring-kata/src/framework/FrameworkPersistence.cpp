@@ -1,6 +1,7 @@
 #include <exception>
 
 #include "FrameworkPersistence.h"
+#include "DatabaseException.h"
 
 FrameworkPersistence::FrameworkPersistence() {
 }
@@ -15,6 +16,6 @@ User FrameworkPersistence::findByEmail(string email) {
     if (search != users.end()) {
         return search->second;
     } else {
-        throw "FrameworkPersistenceException: email not found";
+        throw DatabaseException();
     }
 }

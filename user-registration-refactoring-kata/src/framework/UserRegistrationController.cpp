@@ -1,6 +1,7 @@
 #include <iostream>
 #include <sstream>
 
+#include "DatabaseException.h"
 #include "FrameworkPersistence.h"
 #include "HttpFrameworkRequest.h"
 #include "HttpFrameworkResponse.h"
@@ -27,7 +28,7 @@ HttpFrameworkResponse UserRegistrationController::registerUser(HttpFrameworkRequ
         HttpFrameworkResponse response("The email is already in use", 400);
         return response;
     }
-    catch (const char* s) {
+    catch (DatabaseException& dbException) {
         // Continue if the email was not found
     }
 
