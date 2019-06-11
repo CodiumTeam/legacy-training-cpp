@@ -50,17 +50,14 @@ add_test(NAME GildedRose COMMAND GildedRose)
 add_executable(GildedRoseTextTests
     GildedRose.cc
     GildedRose.h
-    GildedRoseTextTests.cc
-    )
+        )
 target_link_libraries(GildedRoseTextTests ${GTEST_BOTH_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
 add_test(NAME GildedRoseTextTests COMMAND GildedRoseTextTests)
 
 add_executable(GildedRoseApprovalTests
     GildedRose.cc
     GildedRose.h
-    GildedRoseApprovalTests.cc
-    GildedRoseApprovalMain.cc
-    )
+        )
 target_link_libraries(GildedRoseApprovalTests ${GTEST_BOTH_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
 set_property(TARGET GildedRoseApprovalTests PROPERTY CXX_STANDARD 14)
 add_dependencies(GildedRoseApprovalTests aprovaltest)

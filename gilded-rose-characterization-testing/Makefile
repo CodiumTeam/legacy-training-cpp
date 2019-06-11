@@ -36,10 +36,10 @@ GTEST_HEADERS = $(GTEST_DIR)/include/gtest/*.h \
 
 # House-keeping build targets.
 
-all : $(TESTS) $(TEXTTESTS)
+all : $(TESTS)
 
 clean :
-	rm -f $(TESTS) $(TEXTTESTS) gtest.a gtest_main.a *.o
+	rm -f $(TESTS) gtest.a gtest_main.a *.o
 
 # Builds gtest.a and gtest_main.a.
 
@@ -77,12 +77,6 @@ GildedRoseUnitTests.o : $(USER_DIR)/GildedRoseUnitTests.cc \
 
 GildedRose : GildedRoseUnitTests.o GildedRose.o gtest.a gtest_main.a
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -pthread $^ -o $@
-
-GildedRoseTextTests.o : $(USER_DIR)/GildedRoseTextTests.cc
-	$(CXX) -c $^
-
-GildedRoseTextTests : GildedRoseTextTests.o GildedRose.o
-	$(CXX) -pthread $^ -o $@
 
 docker-build:
 	docker build . -t gcc-googletest

@@ -20,7 +20,7 @@ You can to run mutation testing in order to know if all the boundaries have been
 
 
 ## Goals:
-- Write unit tests test that validates the business requirements
+- Write unit tests test on GildedRoseUnitTests.cc that validates the business requirements
 - Use the characterization test technique and code coverage to identify the Backstage passes requirements.
 
 ## Run the tests
