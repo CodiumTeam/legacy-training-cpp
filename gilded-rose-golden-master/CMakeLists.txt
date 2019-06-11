@@ -42,8 +42,7 @@ include_directories(${CMAKE_BINARY_DIR}/aprovaltest/src)
 add_executable(GildedRose
     GildedRose.cc
     GildedRose.h
-    GildedRoseUnitTests.cc
-    )
+        )
 target_link_libraries(GildedRose ${GTEST_BOTH_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
 add_test(NAME GildedRose COMMAND GildedRose)
 
@@ -58,9 +57,7 @@ add_test(NAME GildedRoseTextTests COMMAND GildedRoseTextTests)
 add_executable(GildedRoseApprovalTests
     GildedRose.cc
     GildedRose.h
-    GildedRoseApprovalTests.cc
-    GildedRoseApprovalMain.cc
-    )
+        )
 target_link_libraries(GildedRoseApprovalTests ${GTEST_BOTH_LIBRARIES} ${CMAKE_THREAD_LIBS_INIT})
 set_property(TARGET GildedRoseApprovalTests PROPERTY CXX_STANDARD 14)
 add_dependencies(GildedRoseApprovalTests aprovaltest)

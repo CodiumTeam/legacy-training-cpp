@@ -25,7 +25,6 @@ CXXFLAGS += -g -Wall -Wextra
 
 # All tests produced by this Makefile.  Remember to add new tests you
 # created to the list.
-TESTS = GildedRose
 
 TEXTTESTS = GildedRoseTextTests
 
@@ -36,10 +35,10 @@ GTEST_HEADERS = $(GTEST_DIR)/include/gtest/*.h \
 
 # House-keeping build targets.
 
-all : $(TESTS) $(TEXTTESTS)
+all : $(TEXTTESTS)
 
 clean :
-	rm -f $(TESTS) $(TEXTTESTS) gtest.a gtest_main.a *.o
+	rm -f $(TEXTTESTS) gtest.a gtest_main.a *.o
 
 # Builds gtest.a and gtest_main.a.
 
@@ -70,13 +69,6 @@ gtest_main.a : gtest-all.o gtest_main.o
 
 GildedRose.o : $(USER_DIR)/GildedRose.cc
 	$(CXX) -c $^
-
-GildedRoseUnitTests.o : $(USER_DIR)/GildedRoseUnitTests.cc \
-  $(GTEST_HEADERS)
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/GildedRoseUnitTests.cc
-
-GildedRose : GildedRoseUnitTests.o GildedRose.o gtest.a gtest_main.a
-	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -pthread $^ -o $@
 
 GildedRoseTextTests.o : $(USER_DIR)/GildedRoseTextTests.cc
 	$(CXX) -c $^
