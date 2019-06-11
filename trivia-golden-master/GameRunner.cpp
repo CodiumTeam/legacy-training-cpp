@@ -10,8 +10,9 @@ int main()
 	aGame.add("Chet");
 	aGame.add("Pat");
 	aGame.add("Sue");
+    srand (time(NULL));
 
-	do
+    do
 	{
 
 		aGame.roll(rand() % 5 + 1);
