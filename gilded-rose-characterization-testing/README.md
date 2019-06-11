@@ -40,6 +40,8 @@ on **Linux and Mac**
 
 on **Windows**
 
+    docker build . -t gcc-googletest
+
     docker run -v %cd%:/opt/project -w /opt/project gcc-googletest ./run-once.sh
     
 ## Inspired by:
