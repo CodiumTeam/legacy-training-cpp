@@ -16,9 +16,8 @@ public:
 class PrintDate
 {
 public:
-    vector<Item> & items;
-    PrintDate(vector<Item> & items);
+    PrintDate();
     
-    void updateQuality();
+    void printCurrentDate();
 };
 
