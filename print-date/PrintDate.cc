@@ -1,6 +1,7 @@
 #include <iostream>
 #include <ctime>
 #include "PrintDate.h"
+#include "Calendar.h"
 using namespace std;
 
 PrintDate::PrintDate()
@@ -10,6 +11,7 @@ PrintDate::PrintDate()
     
 void PrintDate::printCurrentDate()
 {
-    time_t now = time(0);
+    Calendar calendar;
+    time_t now = calendar.today();
     cout << std::ctime(&now) << endl;
 }

@@ -68,6 +68,9 @@ gtest_main.a : gtest-all.o gtest_main.o
 # Builds a sample test.  A test should link with gtest.a, and also
 # gtest_main.a if it doesn't define its own main() function.
 
+Calendar.o : $(USER_DIR)/Calendar.cc
+	$(CXX) -c $^
+
 PrintDate.o : $(USER_DIR)/PrintDate.cc
 	$(CXX) -c $^
 
@@ -75,7 +78,7 @@ PrintDateUnitTests.o : $(USER_DIR)/PrintDateUnitTests.cc \
   $(GTEST_HEADERS)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/PrintDateUnitTests.cc
 
-PrintDate : PrintDateUnitTests.o PrintDate.o gtest.a gtest_main.a
+PrintDate : PrintDateUnitTests.o Calendar.o PrintDate.o gtest.a gtest_main.a
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -pthread $^ -o $@
 
 docker-build:
