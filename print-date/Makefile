@@ -71,6 +71,9 @@ gtest_main.a : gtest-all.o gtest_main.o
 Calendar.o : $(USER_DIR)/Calendar.cc
 	$(CXX) -c $^
 
+Printer.o : $(USER_DIR)/Printer.cc
+	$(CXX) -c $^
+
 PrintDate.o : $(USER_DIR)/PrintDate.cc
 	$(CXX) -c $^
 
@@ -78,7 +81,7 @@ PrintDateUnitTests.o : $(USER_DIR)/PrintDateUnitTests.cc \
   $(GTEST_HEADERS)
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -c $(USER_DIR)/PrintDateUnitTests.cc
 
-PrintDate : PrintDateUnitTests.o Calendar.o PrintDate.o gtest.a gtest_main.a
+PrintDate : PrintDateUnitTests.o Calendar.o Printer.o PrintDate.o gtest.a gtest_main.a
 	$(CXX) $(CPPFLAGS) $(CXXFLAGS) -pthread $^ -o $@
 
 docker-build:
