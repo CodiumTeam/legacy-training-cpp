@@ -137,7 +137,7 @@ CURLcode CUrlEmailSender::sendEmail(
     if (curl) {
         curl_easy_setopt(curl, CURLOPT_USERNAME, from.c_str());
         curl_easy_setopt(curl, CURLOPT_PASSWORD, password.c_str());
-        curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
+        //curl_easy_setopt(curl, CURLOPT_URL, url.c_str());
 
         curl_easy_setopt(curl, CURLOPT_USE_SSL, (long) CURLUSESSL_ALL);
         //curl_easy_setopt(curl, CURLOPT_CAINFO, "/path/to/certificate.pem");
@@ -152,11 +152,11 @@ CURLcode CUrlEmailSender::sendEmail(
         curl_easy_setopt(curl, CURLOPT_UPLOAD, 1L);
         curl_easy_setopt(curl, CURLOPT_VERBOSE, 1L);
 
-        ret = curl_easy_perform(curl);
-
-        if (ret != CURLE_OK) {
-            fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(ret));
-        }
+//        ret = curl_easy_perform(curl);
+//
+//        if (ret != CURLE_OK) {
+//            fprintf(stderr, "curl_easy_perform() failed: %s\n", curl_easy_strerror(ret));
+//        }
 
         curl_slist_free_all(recipients);
         curl_easy_cleanup(curl);
