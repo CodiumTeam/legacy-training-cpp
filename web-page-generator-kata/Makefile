@@ -11,6 +11,6 @@ run:
 
 # Docker commands
 docker-run:
-	docker run -it --rm -v $(shell pwd):/usr/src/myapp -w /usr/src/myapp gcc make
+	docker run -it --rm -v ${PWD}:/usr/src/myapp -w /usr/src/myapp gcc make
 win-docker-run:
 	docker run -it --rm -v %cd%:/usr/src/myapp -w /usr/src/myapp gcc make

@@ -8,7 +8,7 @@ tests:
 	@./bin/tests
 
 docker-tests:
-	docker run -v $(shell pwd):/opt/project -w /opt/project gcc make
+	docker run -v ${PWD}:/opt/project -w /opt/project gcc make
 
 win-docker-tests:
 	docker run -v %cd%:/opt/project -w /opt/project gcc make

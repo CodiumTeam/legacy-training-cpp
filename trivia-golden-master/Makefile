@@ -22,9 +22,9 @@ execute:
 	./$(OUT)
 
 docker-run:
-	docker run -v $(shell pwd):/opt/project -w /opt/project gcc make run
+	docker run -v ${PWD}:/opt/project -w /opt/project gcc make run
 docker-golden-master:
-	docker run -v $(shell pwd):/opt/project -w /opt/project gcc make golden-master
+	docker run -v ${PWD}:/opt/project -w /opt/project gcc make golden-master
 docker-windows-run:
 	docker run -v %cd%:/opt/project -w /opt/project gcc make run
 
